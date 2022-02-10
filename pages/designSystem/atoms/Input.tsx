@@ -8,14 +8,14 @@ const borderColors = {
 
 const Input:FC<{
   type?: "border1" | "border2" | "border3" | "border4";
-}> = ({ children, type="border1"}) => {
+}> = ({ type="border1"}, props) => {
   const borderColor = borderColors[type];
   return (
     <div>
       <input
         className={`m-5 p-2  border-solid border-2 rounded ${borderColor}`}
         type="text"
-        placeholder={children}
+        placeholder={props.text}
       >
       </input>
     </div>
